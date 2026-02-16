@@ -4,10 +4,14 @@ resource "aws_subnet" "eks_subnet_public_1a" {
   availability_zone       = "${data.aws_region.current}a"
   map_public_ip_on_launch = true
 
-  tags = {
-    Name                         = "comunidadedevops-subnet-1a"
-    "kubernetes.io / role / elb" = 1 # Necessario para elb  em uma sub-rede no eks
-  }
+
+  tags = merge(
+    local.tags,
+    {
+      Name                         = "comunidadedevops-subnet-1a"
+      "kubernetes.io / role / elb" = 1 # Necessario para elb  em uma sub-rede no eks
+    }
+  )
 }
 
 resource "aws_subnet" "eks_subnet_public_1b" {
@@ -16,8 +20,11 @@ resource "aws_subnet" "eks_subnet_public_1b" {
   availability_zone       = "${data.aws_region.current}b"
   map_public_ip_on_launch = true
 
-  tags = {
-    Name                         = "comunidadedevops-subnet-1b"
-    "kubernetes.io / role / elb" = 1 # Necessario para elb  em uma sub-rede no eks
-  }
+  tags = merge(
+    local.tags,
+    {
+      Name                         = "comunidadedevops-subnet-1b"
+      "kubernetes.io / role / elb" = 1 # Necessario para elb  em uma sub-rede no eks
+    }
+  )
 }
