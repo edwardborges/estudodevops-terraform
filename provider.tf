@@ -6,8 +6,8 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "comunidade-devops"
-    key    = "terraform.tfstate"
+    bucket = "estudo-edward-devops"
+    key    = "estudo/terraform.tfstate"
     region = "us-east-1"
 
   }
