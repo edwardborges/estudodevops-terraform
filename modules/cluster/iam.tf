@@ -29,3 +29,4 @@ resource "aws_iam_policy_attachment" "eks_cluster_role_attachment" {
 
   roles = [aws_iam_role.eks_cluster_role.name] # pesquisando chatgpt ele deu essa informacao sempre exige um destes campos role,users,groups
 }
+
