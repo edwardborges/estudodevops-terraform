@@ -20,3 +20,7 @@ output "eks_vpc_config" {
 output "oidc" {
   value = module.eks_cluster.oidc
 }
+
+output "oidc_policy" {
+  value = module.eks_cluster.oidc_policy
+}
