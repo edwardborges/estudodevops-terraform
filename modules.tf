@@ -12,3 +12,10 @@ module "eks_cluster" {
   public_subnet_1a = module.eks_network.subnet_pub_1a # e aqui que comeca a interdependencia de modulos pois ele pega o output do modulo network
   public_subnet_1b = module.eks_network.subnet_pub_1b # e aqui que comeca a interdependencia de modulos pois ele pega o output do modulo network
 }
+
+
+module "managed_node_group" {
+  source       = "./modules/managed-node-group"
+  project_name = var.project_name
+  tags         = local.tags
+}
