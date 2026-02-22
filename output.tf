@@ -24,3 +24,11 @@ output "oidc" {
 output "oidc_policy" {
   value = module.eks_cluster.oidc_policy
 }
+
+output "ca" {
+  value = module.eks_cluster.certificate_authority
+}
+
+output "endpoint" {
+  value = module.eks_cluster.endpoint
+}
